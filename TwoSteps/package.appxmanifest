@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="dd01ddb7-17a3-4506-8283-5697e7157583" Version="1.0.37.0" Publisher="CN=mavo" />
+  <Identity Name="dd01ddb7-17a3-4506-8283-5697e7157583" Version="1.0.38.0" Publisher="CN=mavo" />
   <mp:PhoneIdentity PhoneProductId="dd01ddb7-17a3-4506-8283-5697e7157583" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>TwoSteps</DisplayName>

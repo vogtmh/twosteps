@@ -1,5 +1,7 @@
 ﻿var serviceArray = []
 var qr;
+var appVersion;
+var appstring;
 
 var timestamp;
 
@@ -160,6 +162,7 @@ function closeQRdialog() {
 }
 
 function openSettings() {
+    $("#settingslabel").html('TwoSteps ' + appstring + ' by mavodev')
     hideDialogs();
     $("#settings_overlay").show()
 }
@@ -313,9 +316,22 @@ function stopQR() {
 }
 
 $(document).ready(function () {
+    try {
+        //Windows.UI.Core.SystemNavigationManager.getForCurrentView().addEventListener("backrequested", onBackPressed);
+        appVersion = Windows.ApplicationModel.Package.current.id.version;
+        appstring = `${appVersion.major}.${appVersion.minor}.${appVersion.build}`;
+        var currentView = Windows.UI.Core.SystemNavigationManager.getForCurrentView();
+        currentView.appViewBackButtonVisibility = Windows.UI.Core.AppViewBackButtonVisibility.visible;
+    }
+    catch(e) {
+        console.log('Windows namespace not available, backbutton listener and versioninfo skipped.')
+        appstring = 'n/a';
+    }
+
     trackTimeout();
     getServices();
     updateTOTP();
+    document.onselectstart = new Function("return false")
 
     document.getElementById('contentFile').onchange = function (evt) {
         try {

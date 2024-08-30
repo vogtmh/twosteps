@@ -54,15 +54,15 @@
     <div id="settings_overlay">
         <div class="overlaycontainer">
             <div id="settingslabel">Settings</div>
-            <div class="pwbutton" id="settings_confirm" onclick='alert("no service provided")'>OK</div>
-            <div class="pwbutton" id="settings_cancel" onclick='$("#settings_overlay").hide()'>Cancel</div>
+            <!--<div class="pwbutton" id="settings_confirm" onclick='alert("no service provided")'>OK</div>-->
+            <div class="pwbutton" id="settings_cancel" onclick='$("#settings_overlay").hide()'>Back</div>
         </div>
     </div>
     <div id="bottombar">
         <div id="add_service" class="bottomitem"><img src="images/add.png" style="height:100%;" onclick='openQRdialog()' /></div>
         <div id="import_services" class="bottomitem"><img src="images/import.png" style="height:100%;" onclick='importServices()' /></div>
         <div id="export_services" class="bottomitem"><img src="images/export.png" style="height:100%;" onclick='saveFile()' /></div>
-        <div id="export_services" class="bottomitem"><img src="images/settings.png" style="height:100%;" onclick='openSettings()' /></div>
+        <div id="open_settings" class="bottomitem"><img src="images/settings.png" style="height:100%;" onclick='openSettings()' /></div>
         <input id="contentFile" type="file" accept="application/json" style="display:none;" />
     </div>
 
