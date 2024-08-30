@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Two Steps</title>
+    <link href="css/default.css" rel="stylesheet" />
+</head>
+<body>
+    <script src="js/jquery3.js"></script>
+    <script src="js/totp.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/crypto.js"></script>
+    <script src="js/qcode-decoder.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <div id="timeoutspacer">
+        <div id="timeoutcontainer">
+            <div id="timeoutbar"> </div>
+        </div>
+    </div>
+    <div id="counter"></div>
+    <div id="content"><div id="messagebox"></div></div>
+    <div id="newservice_overlay">
+        <div class="overlaycontainer">
+            <label for="newservice" id="newservicelabel">Servicename</label>
+            <input type="text" id="newservice" name="newservice" size="14" autofocus />
+            <label for="newsecret" id="newsecretlabel">Secret</label>
+            <input type="text" id="newsecret" name="newsecret" size="14" />
+            <div class="pwbutton" id="start_auth" onclick='newService()'>OK</div>
+            <div class="pwbutton" id="cancel_auth" onclick='$("#newservice_overlay").hide()'>Cancel</div>
+        </div>
+    </div>
+    <div id="qrscanner_overlay">
+        <div class="overlaycontainer" style="top:0px; height:90%;">
+            <div id="videocontainer" style="position:absolute;top:32px;left:10%;height:75%;width:80%;background-color:#333;text-align:center;">
+                <video id="videobox" style="background-color:#333;" autoplay></video>
+            </div>
+            <div class="pwbutton" id="qr_manual" onclick='openNewservicedialog()'>Manual input</div>
+            <div class="pwbutton" id="qr_cancel" onclick='closeQRdialog()'>Cancel</div>
+        </div>
+    </div>
+    <div id="delete_overlay">
+        <div class="overlaycontainer">
+            <div id="deletelabel">Are you sure you want to delete ..?</div>
+            <div class="pwbutton" id="delete_confirm" onclick='alert("no service provided")'>OK</div>
+            <div class="pwbutton" id="delete_cancel" onclick='$("#delete_overlay").hide()'>Cancel</div>
+        </div>
+    </div>
+    <div id="settings_overlay">
+        <div class="overlaycontainer">
+            <div id="settingslabel">Settings</div>
+            <div class="pwbutton" id="settings_confirm" onclick='alert("no service provided")'>OK</div>
+            <div class="pwbutton" id="settings_cancel" onclick='$("#settings_overlay").hide()'>Cancel</div>
+        </div>
+    </div>
+    <div id="bottombar">
+        <div id="add_service" class="bottomitem"><img src="images/add.png" style="height:100%;" onclick='openQRdialog()' /></div>
+        <div id="import_services" class="bottomitem"><img src="images/import.png" style="height:100%;" onclick='importServices()' /></div>
+        <div id="export_services" class="bottomitem"><img src="images/export.png" style="height:100%;" onclick='saveFile()' /></div>
+        <div id="export_services" class="bottomitem"><img src="images/settings.png" style="height:100%;" onclick='openSettings()' /></div>
+        <input id="contentFile" type="file" accept="application/json" style="display:none;" />
+    </div>
+
+</body>
+</html>

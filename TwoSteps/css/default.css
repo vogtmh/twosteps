@@ -1,0 +1,308 @@
+﻿body {
+    touch-action: manipulation;
+    font-family: Segoe,Arial Unicode,Arial,Helvetica,Sans-Serif;
+    background-color: #000;
+    color: #fff;
+}
+
+#timeoutspacer {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2%;
+    background-color: #000;
+    z-index:1000;
+}
+
+#timeoutcontainer {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50%;
+    background-color: #333;
+}
+
+#timeoutbar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0%;
+    height: 100%;
+    background-color: Highlight;
+}
+
+#counter {
+    position: fixed;
+    top: 2%;
+    left: 0px;
+    width: 5%;
+    height: 28px;
+    background-color: #000;
+    z-index: 1000;
+    line-height: 28px;
+    text-align: center;
+    color: Highlight;
+    font-weight: bold;
+}
+
+#content {
+    width:100%;
+    margin-top: 10px;
+    margin-bottom: 80px;
+}
+
+#messagebox {
+    width: 100%;
+    height:28px;
+    line-height:28px;
+    margin-left:9%;
+    width:80%;
+}
+
+.serviceitem {
+    margin-top: 20px;
+    margin-left:9%;
+    width: 80%;
+    border-radius:10px;
+    background-color:#666;
+    padding: 2%;
+    height: 4em;
+}
+
+.removeservice {
+    width: 40px;
+    height: 40px;
+    float: right;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.removeservice:hover {
+    opacity: 1.0;
+}
+
+.totp_key {
+    margin-top: 0.2em;
+    font-size: 2em;
+    float: left;
+}
+
+#newservice_overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #333;
+    display: none;
+    z-index: 1100;
+}
+
+.overlaycontainer {
+    position: absolute;
+    top: 25%;
+    left: 0px;
+    width: 100%;
+    height: 50%
+}
+
+#newservicelabel {
+    position: absolute;
+    top: 20px;
+    left: 10%;
+    width: 80%;
+    height: 16px;
+    font-size: 16px;
+    text-align: left;
+}
+
+#newservice {
+    position: absolute;
+    top: 50px;
+    left: 10%;
+    width: 79%;
+    height: 32px;
+    font-size: 16px;
+    text-align: center;
+}
+
+#newsecretlabel {
+    position: absolute;
+    top: 100px;
+    left: 10%;
+    width: 80%;
+    height: 16px;
+    font-size: 16px;
+    text-align: left;
+}
+
+#newsecret {
+    position: absolute;
+    top: 130px;
+    left: 10%;
+    width: 79%;
+    height: 32px;
+    font-size: 16px;
+    text-align: center;
+}
+
+#start_auth {
+    top: 180px;
+    left: 10%;
+}
+
+#cancel_auth {
+    top: 180px;
+    right: 10%;
+}
+
+.pwbutton {
+    position: absolute;
+    width: 39%;
+    height: 32px;
+    font-size: 16px;
+    line-height: 32px;
+    text-align: center;
+    background-color: #555;
+    cursor: pointer;
+}
+
+.pwbutton:hover {
+    background-color: #777;
+}
+
+#delete_overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #333;
+    display: none;
+    z-index: 1100;
+}
+
+#deletelabel {
+    position: absolute;
+    top: 130px;
+    left: 10%;
+}
+
+#delete_confirm {
+    top: 180px;
+    left: 10%;
+}
+
+#delete_cancel {
+    top: 180px;
+    right: 10%;
+}
+
+#settings_overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #333;
+    display: none;
+    z-index: 1100;
+}
+
+#settingslabel {
+    position: absolute;
+    top: 130px;
+    left: 10%;
+}
+
+#settings_confirm {
+    top: 180px;
+    left: 10%;
+}
+
+#settings_cancel {
+    top: 180px;
+    right: 10%;
+}
+
+#qrscanner_overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #333;
+    display: none;
+    z-index: 1100;
+}
+
+#qr_manual {
+    top: 90%;
+    left: 10%;
+}
+
+#qr_cancel {
+    top:90%;
+    right:10%;
+}
+
+#bottombar {
+    position:fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 60px;
+    width: 100%;
+    line-height: 40px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.bottomitem {
+    height:40px;
+    margin-top: 10px;
+    cursor: pointer;
+    opacity: 0.7;
+    float:left;
+    width: 25%;
+    text-align:center;
+}
+
+.bottomitem:hover {
+    opacity: 1.0;
+}
+
+a {
+    color: #00F;
+}
+
+code {
+    color: #090;
+    font-weight: bold;
+    font-family: Consolas,Lucida Console,Monospace;
+}
+
+.totp {
+    font-size: 20pt;
+}
+
+.online-only, .offline-only {
+    display: none;
+}
+
+.alert {
+    border: 1px solid transparent;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.alert-danger {
+    background-color: #FDD;
+}
+
+.alert-info {
+    background-color: #DDF;
+}
+

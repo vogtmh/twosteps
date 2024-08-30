@@ -1,0 +1,5 @@
+MainPackage=C:\Users\mavo\source\repos\TwoSteps\TwoSteps\bin\Debug\TwoSteps_1.0.37.0_AnyCPU_Debug.appx
+ResourcePack=C:\Users\mavo\source\repos\TwoSteps\TwoSteps\bin\Debug\TwoSteps_1.0.37.0_scale-100.appx
+ResourcePack=C:\Users\mavo\source\repos\TwoSteps\TwoSteps\bin\Debug\TwoSteps_1.0.37.0_scale-125.appx
+ResourcePack=C:\Users\mavo\source\repos\TwoSteps\TwoSteps\bin\Debug\TwoSteps_1.0.37.0_scale-150.appx
+ResourcePack=C:\Users\mavo\source\repos\TwoSteps\TwoSteps\bin\Debug\TwoSteps_1.0.37.0_scale-400.appx
