@@ -162,7 +162,7 @@ function closeQRdialog() {
 }
 
 function openSettings() {
-    $("#settingslabel").html('TwoSteps ' + appstring + ' by mavodev')
+    $("#settingslabel").html('TwoSteps v' + appstring + ' by mavodev')
     hideDialogs();
     $("#settings_overlay").show()
 }
