@@ -134,7 +134,6 @@
     <Content Include="js\qcode-decoder.min.js" />
     <Content Include="js\totp.js" />
     <Content Include="css\default.css" />
-    <Content Include="js\script.js" />
     <None Include="TwoSteps_TemporaryKey.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />

@@ -62,7 +62,7 @@ function getServices() {
         //html += 'key: ' + key + ', value: ' + value + "<br>";
         html += '<div id="messagebox"></div>'
         html += '<div id="' + key + '" class="serviceitem">'
-        html += '<div class="totp_name" > ' + key + '</div > <div id="' + key + '_totp" class="totp_key"></div>'
+        html += '<div class="totp_name" > ' + key + '</div > <div id="' + key + '_totp" class="totp_key"></div><div id="' + key + '_ntotp" class="ntotp_key"></div>'
         html += '<div class="removeservice" onclick=openDeletedialog("'+key+'") ><img src="images/remove.png" style="height:100%; width:100%" /></div > '
         html += '</div > '
     }
@@ -167,12 +167,95 @@ function openSettings() {
     $("#settings_overlay").show()
 }
 
-function displayCode(service, secret, totp) {
+function displayCode(service, secret, totp, type) {
     var timeout = (new Date()).toLocaleTimeString()
     //stringout = 'TOTP: ' + totp + ', Time: ' + timeout;
     //console.log(stringout);
-    $("#" + service + "_totp").html(totp);
+    $("#" + service + "_" + type).html(totp);
 }
+
+//Checks and processes the form
+function validate (x) {
+    return !x.reportValidity || x.reportValidity();
+};
+
+//Math.range
+function range (min, x, max) {
+    return Math.max(Math.min(x | 0, max), min) | 0;
+};
+
+function checkForm(service, secretstring) {
+
+    //List of valid TOTP Secret code patterns
+    var pattern = {
+        //Base32 Code
+        "1": {
+            regex: "[A-Za-z2-7]+=*",
+            title: "Secret should be Base32 encoded (using only a-z and 2-7)"
+        },
+        //Raw Hex Code
+        "2": {
+            regex: "([A-Fa-f0-9]{2})*",
+            title: "Hexadecimal only (0-9 and a-f, even number of characters)"
+        }
+    };
+
+    //TOTP Secret
+    //var txt = q("#token");
+
+    //Number of TOTP digits
+    //TOTP only supports 6 - 8 digits.
+    var num = "6";
+
+    //Secret Code type
+    //"1" => (Default) Base32 (a-z, 2-7)
+    //"2" => Hexadecimal (a-f, 0-9)
+    var sel = "1";
+
+    //IE11 and older has no reportValidity support
+    if (validate(secretstring) && validate(num) && validate(sel)) {
+        var length = range(6, +num.value, 8);
+        var secret = secretstring;
+        var current = TOTP.getCurrentCounter(30);
+        var next = (TOTP.getCurrentCounter(30) + 1);
+
+        //console.log("current: " + current + ", next: " + next);
+
+        if (sel === "1") {
+            try {
+                secret = Convert.base32toHex(secret);
+            } catch (e) {
+                alert("Invalid Base32 characters");
+                return;
+            }
+        }
+        
+        // get current code
+        try {
+            TOTP.otp(secret, current, length, function (code) {
+                //console.log(code)
+                displayCode(service, secretstring, code, "totp");
+            });
+
+        } catch (e) {
+            console.error(e);
+            alert("Problem decoding Secret.\nVerify your secret and type are correct.\nMessage from decoder: " + e.message);
+        };
+
+        // get next code
+        try {
+            TOTP.otp(secret, next, length, function (code) {
+                //console.log(code)
+                displayCode(service, secretstring, code, "ntotp");
+            });
+
+        } catch (e) {
+            console.error(e);
+            alert("Problem decoding Secret.\nVerify your secret and type are correct.\nMessage from decoder: " + e.message);
+        };
+    }
+
+};
 
 function exportServices() {
     let jsonstring = JSON.stringify(serviceArray);

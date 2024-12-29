@@ -89,6 +89,13 @@
     float: left;
 }
 
+.ntotp_key {
+    margin-top: 1.3em;
+    margin-left: 1em;
+    font-size: 1em;
+    float: left;
+}
+
 #newservice_overlay {
     position: fixed;
     top: 0px;
