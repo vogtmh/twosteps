@@ -6,4 +6,4 @@ A 2FA key generator for Windows 10 Mobile
 
 It should work fine with all current OTP codes, but please double check with another authenticator (like Google Authenticator) before you lock yourself out. 
 
-![Screenshot](screenshot.png)
+<img src="screenshot.png" width="300">
