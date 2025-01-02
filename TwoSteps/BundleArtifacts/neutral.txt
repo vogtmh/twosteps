@@ -1,5 +1,5 @@
-MainPackage=C:\Users\mavo\Documents\twosteps\TwoSteps\bin\Release\TwoSteps_2024.12.40.0_AnyCPU.appx
-ResourcePack=C:\Users\mavo\Documents\twosteps\TwoSteps\bin\Release\TwoSteps_2024.12.40.0_scale-100.appx
-ResourcePack=C:\Users\mavo\Documents\twosteps\TwoSteps\bin\Release\TwoSteps_2024.12.40.0_scale-125.appx
-ResourcePack=C:\Users\mavo\Documents\twosteps\TwoSteps\bin\Release\TwoSteps_2024.12.40.0_scale-150.appx
-ResourcePack=C:\Users\mavo\Documents\twosteps\TwoSteps\bin\Release\TwoSteps_2024.12.40.0_scale-400.appx
+MainPackage=C:\Users\mavo\Documents\twosteps\TwoSteps\bin\Release\TwoSteps_2025.1.42.0_AnyCPU.appx
+ResourcePack=C:\Users\mavo\Documents\twosteps\TwoSteps\bin\Release\TwoSteps_2025.1.42.0_scale-100.appx
+ResourcePack=C:\Users\mavo\Documents\twosteps\TwoSteps\bin\Release\TwoSteps_2025.1.42.0_scale-125.appx
+ResourcePack=C:\Users\mavo\Documents\twosteps\TwoSteps\bin\Release\TwoSteps_2025.1.42.0_scale-150.appx
+ResourcePack=C:\Users\mavo\Documents\twosteps\TwoSteps\bin\Release\TwoSteps_2025.1.42.0_scale-400.appx

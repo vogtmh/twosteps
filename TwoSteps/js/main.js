@@ -54,13 +54,12 @@ function getServices() {
         serviceArray = JSON.parse(localStorage.services);
     }
 
-    let html = '';
+    let html = '<div id="messagebox"></div>';
     for (let i = 0; i < serviceArray.length; i++) {
         service = serviceArray[i];
         key = service[0]
         value = decrypt(service[1])
         //html += 'key: ' + key + ', value: ' + value + "<br>";
-        html += '<div id="messagebox"></div>'
         html += '<div id="' + key + '" class="serviceitem">'
         html += '<div class="totp_name" > ' + key + '</div > <div id="' + key + '_totp" class="totp_key"></div><div id="' + key + '_ntotp" class="ntotp_key"></div>'
         html += '<div class="removeservice" onclick=openDeletedialog("'+key+'") ><img src="images/remove.png" style="height:100%; width:100%" /></div > '

@@ -61,14 +61,24 @@
     <div id="settings_overlay">
         <div class="overlaycontainer">
             <div id="settingslabel">Settings</div>
+            <div id="import" class="serviceitem">
+                <div class="totp_name">Get items from file</div> <div id="export_totp" class="totp_key">Import</div>
+                <div class="removeservice" onclick="importServices()"><img src="images/import.png" style="height:100%; width:100%" /></div>
+            </div>
+            <div id="export" class="serviceitem">
+                <div class="totp_name">Save items to file</div> <div id="export_totp" class="totp_key">Export</div>
+                <div class="removeservice" onclick="saveFile()"><img src="images/export.png" style="height:100%; width:100%" /></div>
+            </div>
             <!--<div class="pwbutton" id="settings_confirm" onclick='alert("no service provided")'>OK</div>-->
             <div class="pwbutton" id="settings_cancel" onclick='$("#settings_overlay").hide()'>Back</div>
         </div>
     </div>
     <div id="bottombar">
         <div id="add_service" class="bottomitem"><img src="images/add.png" style="height:100%;" onclick='openQRdialog()' /></div>
+        <!--
         <div id="import_services" class="bottomitem"><img src="images/import.png" style="height:100%;" onclick='importServices()' /></div>
         <div id="export_services" class="bottomitem"><img src="images/export.png" style="height:100%;" onclick='saveFile()' /></div>
+        -->
         <div id="open_settings" class="bottomitem"><img src="images/settings.png" style="height:100%;" onclick='openSettings()' /></div>
         <input id="contentFile" type="file" accept="application/json" style="display:none;" />
     </div>
