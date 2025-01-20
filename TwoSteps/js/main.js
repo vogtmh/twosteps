@@ -397,9 +397,28 @@ function stopQR() {
     $("#messagebox").html("")
 }
 
+function onBackPressed(event) {
+    if ($('#newservice_overlay:visible').length > 0) {
+        $("#newservice_overlay").hide();
+        event.handled = true;
+    }
+    else if ($('#qrscanner_overlay:visible').length > 0) {
+        closeQRdialog();
+        event.handled = true;
+    }
+    else if ($('#delete_overlay:visible').length > 0) {
+        $("#delete_overlay").hide()
+        event.handled = true;
+    }
+    else if ($('#settings_overlay:visible').length > 0) {
+        $("#settings_overlay").hide()
+        event.handled = true;
+    }
+}
+
 $(document).ready(function () {
     try {
-        //Windows.UI.Core.SystemNavigationManager.getForCurrentView().addEventListener("backrequested", onBackPressed);
+        Windows.UI.Core.SystemNavigationManager.getForCurrentView().addEventListener("backrequested", onBackPressed);
         appVersion = Windows.ApplicationModel.Package.current.id.version;
         appstring = `${appVersion.major}.${appVersion.minor}.${appVersion.build}`;
         var currentView = Windows.UI.Core.SystemNavigationManager.getForCurrentView();
