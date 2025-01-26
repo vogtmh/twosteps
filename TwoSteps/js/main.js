@@ -471,6 +471,7 @@ $(document).ready(function () {
                 sendMessage(message);
                 getServices();
                 updateTOTP();
+                $("#settings_overlay").hide()
             };
             reader.readAsText(file);
         } catch (err) {
